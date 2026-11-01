@@ -1,178 +1,120 @@
+WikiText is a collection of English text datasets extracted from verified Wikipedia articles, designed for training and benchmarking language models. It was introduced to provide a larger, more realistic corpus than earlier datasets like Penn Treebank, with a focus on preserving the original article structure, including headings, lists, and links. The dataset is commonly used in research on machine learning and deep learning for tasks such as next-word prediction and model evaluation.
+The primary versions are WikiText-2 and WikiText-103, containing 2 million and 103 million tokens respectively. These datasets are curated to exclude tables and lists, and they retain the raw text with special tokens for unknown words, making them suitable for testing models' ability to handle a large vocabulary and long-term dependencies. WikiText has become a standard benchmark in the field, cited in numerous papers on neural networks and large language models.
+WikiText was created by Salesforce Research in 2016, with the goal of providing a more challenging corpus than previous options. The extraction process involved taking articles from Wikipedia that were rated as 'Good' or 'Featured' by the Wikipedia community, ensuring high quality and consistency. The text was then cleaned to remove markup, but the original casing, punctuation, and numbers were preserved, which is a departure from earlier datasets that often lowercased everything.
+A key feature is the use of a 267,735-word vocabulary for WikiText-103, which includes all words appearing at least three times in the training set. Rare words are replaced with an '<unk>' token. This large vocabulary forces models to learn representations for many words, testing their ability to generalize. The dataset is split into training, validation, and test sets, with the test set containing articles from a different time period to avoid leakage.
+WikiText is primarily used for evaluating language models, which predict the probability of a sequence of words. Researchers use it to measure perplexity, a metric indicating how well a model predicts the next word. Lower perplexity scores are better, and WikiText-103 has become a standard for comparing transformer-based models, such as those developed by OpenAI and Google DeepMind.
+For example, models like GPT-2 and BERT have been evaluated on WikiText-103, with reported perplexity scores improving over time. The dataset's long articles, averaging around 3,000 words, test a model's ability to handle long-range context, which is crucial for tasks like document summarization and question answering. This makes WikiText a valuable resource for advancing artificial intelligence research.
+Before WikiText, the standard benchmark was the Penn Treebank (PTB), which contains only about 1 million tokens from Wall Street Journal articles. PTB is smaller and has a restricted vocabulary, making it easier for models to achieve low perplexity. WikiText offers a more realistic challenge by using a larger vocabulary and longer documents, which better reflects real-world text.
+Another dataset, the One Billion Word Benchmark, is larger but consists of shuffled sentences, losing document structure. WikiText retains the original article order, allowing models to learn from coherent narratives. This structural difference is significant for training models that need to understand context across sentences and paragraphs, a key capability for generative AI systems.
+Despite its popularity, WikiText has limitations. The dataset is derived from Wikipedia, which has a formal, encyclopedic style, so it may not represent informal or conversational language. Additionally, the cleaning process removes tables and lists, which can be informative for certain tasks. Some researchers have noted that the '<unk>' token handling can bias evaluation, as models may rely on it rather than learning rare words.
+Another criticism is that WikiText-103, while large, is still smaller than modern web-scale datasets used for training large language models like those from Anthropic or Microsoft (AI). As of 2025, many models are trained on trillions of tokens, making WikiText more of a benchmark for academic research than a training source for production systems. Nevertheless, it remains a standard for reproducible comparisons in the field.
+Artificial intelligence (AI) is the branch of computer science concerned with building machines and software that perform tasks which, when done by humans, are understood to require intelligence, such as perceiving the environment, understanding language, solving problems, and making decisions. The field spans a wide range of approaches, from rule-based systems that encode human expertise directly to statistical models that learn behavior from data.
+The term was coined for a 1956 workshop and has since described a rotating cast of techniques, expanding and contracting in public attention through cycles of hype and disappointment.
+The field's founding moment is usually dated to the 1956 Dartmouth workshop, organized by John McCarthy, who coined the term "artificial intelligence" for the proposal. Early AI research emphasized Symbolic AI: logic, search, and hand-coded rules. This approach produced early successes such as theorem provers and, later, commercial expert systems in the 1980s, but it struggled with tasks that resisted explicit rules, such as vision and language. Funding collapses followed setbacks and inflated expectations, producing what researchers call an AI winter, notably after a critical 1973 UK government report and again in the late 1980s as expert systems failed to scale.
+A parallel, initially marginal line of work pursued statistical and connectionist methods. The Perceptron (1958) modeled a single trainable neuron, but its documented limitations contributed to the first AI winter. Interest revived through the 1980s and, decisively, in 2012, when a deep convolutional network called AlexNet dramatically outperformed prior methods on a major image recognition benchmark, a result widely credited with starting the modern Deep learning era. The use of graphics processing units (GPUs) to accelerate neural networks was a key factor in this breakthrough.
+Deep learning matured through the 2010s with progress in vision, speech, and language processing. The 2017 Transformer (architecture) architecture enabled the training of much larger models on text, culminating in the Large language model paradigm. The Launch of ChatGPT in November 2022 made conversational AI broadly accessible and triggered a wave of investment and public attention often called the AI boom.
+AI research is often divided between symbolic approaches, which manipulate explicit representations of knowledge, and connectionist or statistical approaches, which learn implicit representations from data. Machine learning is the dominant modern paradigm, encompassing supervised, unsupervised, and reinforcement learning. Hybrid approaches, combining learned components with symbolic reasoning or search, remain an active research direction, particularly for tasks requiring reliable logical inference.
+Traditional goals of AI research include learning, reasoning, knowledge representation, planning, natural language processing, and perception, as well as support for Robotics. Techniques include state space search, mathematical optimization, formal logic, artificial neural networks, and methods from statistics, operations research, and economics. AI also draws on psychology, linguistics, philosophy, and neuroscience.
+Early researchers developed algorithms that imitated step-by-step reasoning that humans use when solving puzzles or making logical deductions. By the late 1980s and 1990s, methods were developed for dealing with uncertain or incomplete information, employing concepts from probability and economics. Many of these algorithms were insufficient for solving large reasoning problems because they experienced a "combinatorial explosion", meaning they become exponentially slower as the problems grow. Even humans rarely use the step-by-step deduction that early AI research could model. Humans solve most of their problems using fast, intuitive judgments.
+Reasoning models, a type of large language model (LLM) trained to generate intermediate chains of thought, emerged in 2024 and allowed improved performance on complex problems in mathematics and coding. These models can produce incorrect outputs or "hallucinations," unlike symbolic reasoning systems.
+Early researchers developed algorithms that imitated step-by-step reasoning that humans use when solving puzzles or making logical deductions. By the late 1980s and 1990s, methods were developed for dealing with uncertain or incomplete information, employing concepts from probability and economics. Many of these algorithms were insufficient for solving large reasoning problems because they experienced a "combinatorial explosion", meaning they become exponentially slower as the problems grow. Even humans rarely use the step-by-step deduction that early AI research could model. Humans solve most of their problems using fast, intuitive judgments.
 
-There's talk on the street, it sounds so familiar
-Great expectations, everybody's watching you
-People you meet, they all seem to know you
-Even your old friends treat you like you're something new
+Reasoning models, a type of large language model (LLM) trained to generate intermediate chains of thought, emerged in 2024 and allowed improved performance on complex problems in mathematics and coding. These models can produce incorrect outputs or "hallucinations," unlike symbolic reasoning systems.
+Knowledge representation
 
-Johnny-come-lately, the new kid in town
-Everybody loves you, so don't let them down
+AI programs use knowledge to answer questions intelligently and make deductions about real-world facts. Formal knowledge representation and knowledge engineering use symbols to represent words, concepts and things in the world. A knowledge base is a body of knowledge represented in a form that can be used by a program. An ontology is the set of objects, relations, concepts, and properties used by a particular domain of knowledge. Formal knowledge has been studied extensively since the 1970s and researchers have developed formalisms for a wide variety of difficult domains.
 
-You look in her eyes, the music begins to play
-Hopeless romantics, here we go again
-But after a while, you're lookin' the other way
-It's those restless hearts that never mend (Oh)
+The symbolic approach has difficulty with several problems: the breadth of commonsense knowledge (the set of atomic facts the average person knows is enormous), the sub-symbolic form of most commonsense knowledge (much of what people know is not represented as "facts" or "statements" they can express verbally), and knowledge acquisition (the problem of obtaining knowledge for AI applications).
 
-Johnny-come-lately, the new kid in town
-Will she still love you when you're not around?
+Large language models (and some other AI programs developed since 2012) do not require explicit, symbolic knowledge. They acquire knowledge by being trained on the combined text of millions of books and billions of websites. Modern AI can also learn about a domain by running experiments (as when AlphaZero learns game strategy by playing against itself). Machine learning solves the problems of general knowledge, commonsense knowledge and knowledge acquisition, however, this approach has struggled with accurate recall and valid reasoning.
+Planning and decision-making
 
-There's so many things you should have told her
-But night after night, you're willing to hold her, just hold her
-Tears on your shoulder
+An "agent" is any entity (artificial or not) that perceives and takes actions in the world. A rational agent has goals or preferences and takes actions to make them happen. In automated planning, the agent has a specific goal. In automated decision-making, the agent has preferences - there are some situations it would prefer to be in, and some situations it is trying to avoid. The decision-making agent assigns a number to each situation (called its "utility") that measures how much the agent prefers it. For each possible action, it can calculate the "expected utility": the utility of all possible outcomes of the action, weighted by the probability that the outcome will occur. It can then choose the action with the maximum expected utility.
 
-There's talk on the street, it's there to remind you
-Doesn't really matter which side you're on
-You're walking away and they're talking behind you
-They will never forget you 'til somebody new comes along
+In classical planning, the agent knows exactly what the effect of any action will be. In most real-world problems, however, the agent may not understand its current situation with certainty (it is "unknown" or "unobservable") and it may not know for certain what will happen after each possible action (it is not "deterministic"). It must choose an action by making a probabilistic guess and then reassess the situation to see if the action had the desired effect. Alongside thorough testing and improvement based on previous decisions, having an explanation for why the agent took certain decisions is a way to build trust, especially when the decisions have to be relied upon.
 
-Where you've been lately? There's a new kid in town
-Everybody loves him, don't they?
-He's holding her and you're still around
+In some problems, the agent's preferences may be uncertain, especially if there are other agents or humans involved. These preferences may be learned (e.g., with inverse reinforcement learning), or the agent can seek information to improve them. Information value theory can be used to weigh the value of exploratory or experimental actions. The space of possible future actions and situations is typically intractable, so agents must take actions and evaluate their outcomes.
+Applications and impact
 
-Oh, my, my
-There's a new kid in town
-Just another new kid in town
-(Ooh, hoo) Everybody's talking 'bout the
-(Ooh, hoo) New kid in town
-(Ooh, hoo) Everybody's walking like the
-(Ooh, hoo) New kid in town
+AI systems are deployed across search, translation, recommendation, medical diagnosis, scientific research such as protein structure prediction, autonomous vehicles, and increasingly as general-purpose assistants and coding tools. The rise of capable AI agent systems since 2024, which combine language models with tool use and multi-step planning, has extended AI from answering questions to completing tasks independently.
 
-There's a new kid in town
-I don't want to hear it
-There's a new kid in town
-I don't want to hear it, ah-ooh
-There's a new kid in town
-There's a new kid in town
-There's a new kid in town
-Everybody's talking
-There's a new kid in town
-People started walking
-There's a new kid in town
-There's a new kid in town
-There's a new kid in town
-There's a new kid in town
+High-profile applications include advanced web search engines, chatbots, virtual assistants, autonomous vehicles, play and analysis in strategy games (e.g., chess and Go), and content generation (e.g., text, images, audio, and videos).
+Debates
 
-On a dark desert highway, cool wind in my hair
-Warm smell of colitas, rising up through the air
-Up ahead in the distance, I saw a shimmering light
-My head grew heavy and my sight grew dim
-I had to stop for the night
-There she stood in the doorway
-I heard the mission bell
-And I was thinking to myself
-"This could be Heaven or this could be Hell"
-Then she lit up a candle and she showed me the way
-There were voices down the corridor
-I thought I heard them say
+Long-running debates concern whether current techniques can lead to Artificial general intelligence, a system with human-level competence across essentially all cognitive tasks, and what risks such systems might pose. Alan Turing's 1950 paper proposed an operational test for machine intelligence, now known as the Turing test, though its adequacy as a benchmark is widely disputed. Critics argue that fluent text generation does not imply understanding, while proponents point to emergent capabilities as evidence of genuine progress toward general intelligence.
 
-Welcome to the Hotel California
-Such a lovely place (Such a lovely place)
-Such a lovely face
-Plenty of room at the Hotel California
-Any time of year (Any time of year)
-You can find it here
+Some companies, such as OpenAI, Google DeepMind, and Meta (AI research), aim to create AGI. Ethical concerns, AI's long-term effects, environmental effects, and potential existential risks have prompted discussions of AI regulation.
+Recent developments
 
-Her mind is Tiffany-twisted, she got the Mercedes bends
-She got a lot of pretty, pretty boys she calls friends
-How they dance in the courtyard, sweet summer sweat
-Some dance to remember, some dance to forget
-
-So I called up the Captain
-"Please bring me my wine."
-He said, "We haven't had that spirit here since nineteen sixty nine."
-And still those voices are calling from far away
-Wake you up in the middle of the night
-Just to hear them say
-
-Welcome to the Hotel California
-Such a lovely place (Such a lovely place)
-Such a lovely face
-They livin' it up at the Hotel California
-What a nice surprise (what a nice surprise)
-Bring your alibis
-
-Mirrors on the ceiling
-The pink champagne on ice
-And she said "We are all just prisoners here, of our own device"
-And in the master's chambers
-They gathered for the feast
-They stab it with their steely knives
-But they just can't kill the beast
-
-Last thing I remember
-I was running for the door
-I had to find the passage back to the place I was before
-"Relax," said the night man
-"We are programmed to receive
-You can check-out any time you like
-But you can never leave!" 
+In 2024, reasoning models, a type of large language model trained to generate intermediate chains of thought, emerged and allowed improved performance on complex problems in mathematics and coding. These models can produce incorrect outputs or "hallucinations," unlike symbolic reasoning systems. The AI boom in the 2020s coincided with advances in Generative AI, which became widespread and allowed for the creation and modification of media. In addition to AI safety and unintended consequences and harms from the use of AI, ethical concerns, AI's long-term effects, environmental effects, and potential existential risks have prompted discussions of AI regulation.
 
 
-He was a hard-headed man
-He was brutally handsome
-And she was terminally pretty
-She held him up
-And he held her for ransom
-In the heart of the cold, cold city
+I’m so cooked, we ALL are so cooked…
+Do i understand? No.
+Do i watch whole thing like i understand? Yes
+Baby Anton went from gibberish to poetry in one video. Can't wait to see what he says after $5k of compute and PyTorch!!
+Peak imposter syndrome is making an AI from scratch in many ways including scratch and still saying you're average
+You are the only youtube guy who    is the only one who inspired to learn me programing to make crazy projects
+Thanks man
+insane refresh pull
 
-He had a nasty reputation as a cruel dude
-They said he was ruthless, they said he was crude
-They had one thing in common, they were good in bed
-She'd say, "Faster, faster. The lights are turnin' red."
+Steve was highly involved with the advertising and every facet of Apple's business. But he was far from the mastermind behind the renowned launch spot...While Steve Jobs didn't create the advertising concepts, he does deserve an incredible amount of credit. He was fully responsible for ultimately pulling the trigger on the right ad campaign from the right agency, and he used his significant influence to secure talent and rally people like no one I've ever seen before. Without Steve Jobs there's not a shot in hell that a campaign as monstrously big as this one would get even close to flying off the ground...it got an audience that once thought of Apple as semi-cool, but semi-stupid to suddenly think about the brand in a whole new way.
+When you grow up you tend to get told the world is the way it is and your job is just to live your life inside the world. Try not to bash into the walls too much. Try to have a nice family life, have fun, save a little money.
 
-Life in the fast lane
-Surely make you lose your mind
-Life in the fast lane
+That's a very limited life. Life can be much broader once you discover one simple fact, and that is - everything around you that you call life, was made up by people that were no smarter than you. And you can change it, you can influence it, you can build your own things that other people can use.
 
-Are you with me so far?
+The minute that you understand that you can poke life and actually something will, you know if you push in, something will pop out the other side, that you can change it, you can mold it. That's maybe the most important thing. It's to shake off this erroneous notion that life is there and you're just gonna live in it, versus embrace it, change it, improve it, make your mark upon it.
 
-Eager for action
-Hot for the game
-The coming attraction
-The drop of a name
+I think that's very important and however you learn that, once you learn it, you'll want to change life and make it better, cause it's kind of messed up, in a lot of ways. Once you learn that, you'll never be the same again.
+We are living in the era of digital transformation. Computers are rapidly becoming the most important tool for companies, science, society, and indeed our everyday life. We all need a basic understanding of Computer Science to make sense of the world, to make decisions, and to improve our lives.
 
-They knew all the right people
-They took all the right pills
-They threw outrageous parties
-They paid heavenly bills
+Yet there are many misunderstandings about Computer Science. The reason is that it is a nascent discipline that has evolved rapidly and had to reinvent itself several times over the last 100 years – from the beginnings of scientific computing to the modern era of smartphones and the cloud.
+f you have more than one email address associated with your account on GitHub, click the email address drop-down menu and select the email address to use as the Git author email address. Only verified email addresses appear in this drop-down menu. If you enabled email address privacy, then a no-reply will be the default commit author email address. For more information about the exact form the no-reply email address can take, see Setting your commit email address.
+how I feel asking "what happened??" while everyone laughs
+NASA has a strong track record of archiving and providing universal access to science data products from its science missions and programs. As a matter of longstanding policy and practice, NASA archives all science mission data products to ensure long-term usability and to promote wide-spread usage by scientists, educators, decision-makers, and the general public. Our vision is to facilitate the on-going scientific discovery process and inspire the public through the body of knowledge captured in these public archives. The archives are primarily organized by science discipline or theme. Communities of practice within these disciplines and themes are actively engaged in the planning and development of archival capabilities to ensure responsiveness and timely delivery of data to the public from the science missions.
+Planetary Data System
 
-There were lines on the mirror
-Lines on her face
-She pretended not to notice
-She was caught up in the race
+The Planetary Data System (PDS) originally developed in the 1990s provides access to data from more than 50 years of planetary science missions via distributed topical nodes at seven research institutions. Astrophysics science archives have been established in a wavelength-specific structure alongside the Astrophysics Great Observatories, which include the Hubble Space Telescope, the Chandra X-Ray Telescope, and the Spitzer Infrared Space Telescope. The astrophysics data centers in turn have formed the foundation pieces for the Virtual Astronomical Observatory, or the seamless view of the digital sky in all wavelengths. The evolving Heliophysics Data Environment provides access to data and physics-based models that facilitate a systems level understanding of the Sun and its impact on our solar system.
+Earth Observing System Data and Information System
 
-Out every evening
-Until it was light
-He was too tired to make it
-She was too tired to fight about it
+Perhaps the most notable endeavor in this regard is the Earth Observing System Data and Information System (EOSDIS), which processes, archives, and distributes data from a large number of Earth observing satellites and represents a crucial capability for studying the Earth system from space and improving prediction of Earth system change. EOSDIS consists of a set of processing facilities and data centers distributed across the United States that serve hundreds of thousands of users around the world.
 
-Life in the fast lane
-Surely make you lose your mind
-Life in the fast lane
-Life in the fast lane
-Everything all the time
-Life in the fast lane
+We promote broader utilization of our science data archives beyond the original investigators by increasing awareness of and ease of access through Web services and applications programming interfaces (APIs). The Earth Observing System (EOS) Clearinghouse (ECHO) is one such effort to promote broader use of Earth science data. ECHO is a spatial and temporal metadata registry that allows users to more efficiently search and access data and services and increases the potential for interoperability with new tools and services. We also have an extensive set of education and public outreach efforts that build on the science data archives to engage and excite students and the general public to use the data in citizen science endeavors. The “My NASA Data” site is one such effort to mentor teachers and amateurs in using atmospheric and Earth science data.
+ World Wide Telescope & Galaxy Zoo. 
 
-Blowin' and burnin'
-Blinded by thirst
-They didn't see the stop sign
-Took a turn for the worst
+Finally, we support ever-increasing public participation by providing science datasets used in software applications on the Web, mobile phones, and other personal devices. These applications include desktop geographical-browsers such as World Wide Telescope (WWT) and Web applications like Galaxy Zoo. WWT is a rich visualization environment that functions as a virtual telescope, allowing anyone to make use of professional astronomical data to explore and understand the universe. Galaxy Zoo is very effective “crowd-sourcing” effort that has significantly enhanced the use of the science datasets. These platforms collectively reach millions of users worldwide, and provide exciting new capabilities for browsing data sets and soliciting broad public participation in science data analysis on a scale that has not previously been possible.
+High Energy Astrophysics Science Archive Research Center 
 
-She said, "Listen, baby. You can hear the engine ring
-We've been up and down this highway; haven't seen a goddamn thing."
+The High Energy Astrophysics Science Archive Research Center (HEASARC) is the primary archive for NASA’s (and other space agencies’) missions studying electromagnetic radiation from extremely energetic cosmic phenomena ranging from black holes to the Big Bang. Since its merger with the Legacy Archive for Microwave Background Data Analysis (LAMBDA) in 2008, the HEASARC archive contains data obtained by high-energy astronomy missions observing in the extreme-ultraviolet (EUV), X-ray, and gamma-ray bands, as well as data from space missions, balloons, and ground-based facilities that have studied the relic cosmic microwave background (CMB) radiation in the sub-mm, mm and cm bands.
 
-He said, "Call the doctor. I think I'm gonna crash."
-"The doctor say he's comin', but you gotta pay in cash."
+The Astromaterials Data System (AstroMat) 
 
-They went rushin' down that freeway
-Messed around and got lost
-They didn't care they were just dyin' to get off and it was
+Astromaterials Data System (AstroMat) is an effort started in 2018 with NASA funding to build and operate a data infrastructure for laboratory data acquired on samples curated in the Astromaterials Collection of the Johnson Space Center. AstroMat collections include data from lunar, meteorite, star dust, cosmic dust, and asteroid return samples.
 
-Life in the fast lane
-Surely make you lose your mind
-Life in the fast lane
-Life in the fast lane
-Everything all the time
-Life in the fast lane
+Exoplanet Archive 
 
-Life in the fast lane
-Life in the fast lane 
+ The NASA Exoplanet Archive is an online astronomical exoplanet and stellar catalog and data service that collates and cross-correlates astronomical data and information on exoplanets and their host stars, and provides tools to work with these data.
+
+The Astrobiology Habitable Environments Database (AHED
+
+The Astrobiology Habitable Environments Database (AHED) is a long-term repository and productivity platform for the storage, discovery and analysis of data relevant to the field of astrobiology. The goals of AHED are to: serve as a centralized digital library of NASA funded research relevant to the Astrobiology Program, to enable proposers to fulfill mandated data management plan (DMP) archiving requirements, and serve a resource for the broader scientific community promoting the advancement of astrobiology through data sharing and standardization – including non-NASA funded research data.
+Life Sciences Data
+
+NASA Life Sciences Portal: A data archive focused on the life sciences, including; behavior and performance data, genetics, cell and molecular biology, clinical medicine, life support systems, etc.
+NASA People Data
+
+WICN (Workforce Information Cubes for NASA): The Workforce Strategy Division in the Office of Human Capital Management provides updated WICN Cubes every two weeks. Data covers who works where, who works on what, and what changes are happening.
+Europejara is a genus of tapejarid pterosaur that lived during the Barremian age of the Early Cretaceous epoch in what is now Spain. The only known specimen was found at the La Huérguina Formation of Cuenca, a location noted for its exceptional Konservat-Lagerstätte preservation. In 2012, the new genus and species Europejara olcadesorum was named based on it. The holotype specimen consists of an incomplete, crushed skull (pictured); the bones of the postorbital region are displaced while the mandible is almost complete. The first tapejarid known from Europe, Europejara was also the oldest known member of that group and the oldest known toothless pterosaur at the time of its naming. Researchers have found Europejara to be related to Brazilian tapejarids and, given its age, have used this relationship as evidence for the group's origin on the northern palaeocontinent of Laurasia. Due to the shape of their jaws and skulls, they are believed to have been fruit or seed eaters.
+African blue flycatcher 	
+
+The African blue flycatcher (Elminia longicauda) is a small passerine bird in the family Stenostiridae, found in parts of West, Central and East Africa. Measuring 15 to 18 centimetres (5.9 to 7.1 in) in length, it has bright blue upperparts, a short crest, a long tail, and pale greyish-blue underparts. Its black flight feathers are edged with blue, while juveniles have duller plumage. The species inhabits forests, moist savannas, gardens and wooded farmland, foraging among leaves with its tail fanned and wings partly spread. Its song consists of a series of slow and irregular sibilant notes. This African blue flycatcher was photographed in Kibale National Park in western Uganda.
+Steven Paul Jobs (February 24, 1955 – October 5, 2011) was an American businessman, inventor, and investor. A pioneer of the personal computer revolution of the 1970s and 1980s, Jobs co-founded Apple with his early business partner Steve Wozniak as Apple Computer Company in 1976. After the company's board of directors fired him in 1985, he founded NeXT the same year and purchased Pixar in 1986, becoming its chairman and majority shareholder until 2007. Jobs returned to Apple in 1997 as CEO, where he was closely involved with the creation and promotion of many of the company's most influential products until his resignation in 2011.
+Jobs was born in San Francisco in 1955 and adopted shortly afterward. He attended Reed College in 1972 before withdrawing that same year. In 1974, he traveled through India, seeking enlightenment before later studying Zen Buddhism. He and Wozniak co-founded Apple in 1976 to further develop and sell Wozniak's Apple I personal computer. Together, the duo gained fame and wealth a year later with the production and sale of the Apple II, one of the first highly successful mass-produced microcomputers.
+
+Jobs saw the commercial potential of the Xerox Alto in 1979, which was mouse-driven and had a graphical user interface (GUI). This led to the development of the largely unsuccessful Apple Lisa in 1983, followed by the breakthrough Macintosh 128K in 1984, the first mass-produced computer with a GUI. The Macintosh launched the desktop publishing industry in 1985 (for example, the Aldus PageMaker) with the addition of the Apple LaserWriter, the first laser printer to feature vector graphics and PostScript.
+
+In 1985, Jobs departed Apple after a long power struggle with the company's board and its then-CEO, John Sculley. That same year, Jobs took some Apple employees with him to found NeXT, a computer platform development company that specialized in computers for higher education and business markets, serving as its CEO. In 1986, he bought the computer graphics division of Lucasfilm, which was spun off independently as Pixar.
+Pixar produced the first computer-animated feature film, Toy Story (1995), and became a leading animation studio, producing dozens of commercially successful and critically acclaimed films.
+
+In 1997, Jobs returned to Apple as CEO after the company acquired NeXT. He was largely responsible for reviving Apple, which was on the verge of bankruptcy. He worked closely with British designer Jony Ive to develop a line of products and services that had larger cultural ramifications, beginning with the "Think different" advertising campaign and leading to the iMac, iTunes, Mac OS X, Apple Store, iPod, iTunes Store, iPhone, App Store, and iPad. Jobs was also a member of the board of directors at Gap Inc. from 1999 to 2002.
+In 2003, Jobs was diagnosed with a pancreatic neuroendocrine tumor. He died of tumor-related respiratory arrest in 2011; in 2022, he was posthumously awarded the Presidential Medal of Freedom. Since his death, he has been granted 141 patents; Jobs holds over 450 patents in total.

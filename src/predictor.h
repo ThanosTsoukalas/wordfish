@@ -51,4 +51,5 @@ static std::string PredictNextWord(std::string curr_word, wordTree *word_tree)
 
     return ((*word_tree)[(predicted_wordList[0].indexlist[0])]).content;
 
+    // eh it was not that complex at the end...
 }

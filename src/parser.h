@@ -14,7 +14,30 @@ static void ParseWordsFromString(std::string *stringloc, std::vector<std::string
 
     for (int i = 0; i < (*stringloc).length(); i++)
     {
-        if ((*stringloc)[i] == ' ' || (*stringloc)[i] == '\n' || (*stringloc)[i] == '"')
+        if ((*stringloc)[i] == ' '   || 
+            (*stringloc)[i] == '\n'  || 
+            (*stringloc)[i] == '"'   || 
+            (*stringloc)[i] == '('   ||
+            (*stringloc)[i] == ')'   ||
+            (*stringloc)[i] == '['   ||
+            (*stringloc)[i] == ']'   ||
+            (*stringloc)[i] == '!'   ||
+            (*stringloc)[i] == '@'   ||
+            (*stringloc)[i] == '#'   ||
+            (*stringloc)[i] == '$'   ||
+            (*stringloc)[i] == '%'   ||
+            (*stringloc)[i] == '^'   ||
+            (*stringloc)[i] == '&'   ||
+            (*stringloc)[i] == '*'   ||
+            (*stringloc)[i] == '/'   ||
+            (*stringloc)[i] == '\\'  ||
+            (*stringloc)[i] == '<'   ||
+            (*stringloc)[i] == '>'   ||
+            (*stringloc)[i] == ','   ||
+            (*stringloc)[i] == '.'   ||
+            (*stringloc)[i] == '{'   ||
+            (*stringloc)[i] == '}'
+        )
         {
             if (current_word != "")
             {
@@ -22,7 +45,7 @@ static void ParseWordsFromString(std::string *stringloc, std::vector<std::string
             }
             current_word = "";
         }
-        else if ((*stringloc)[i] != '.')
+        else
         {
             current_word = current_word + (*stringloc)[i];
         }
