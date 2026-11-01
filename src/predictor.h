@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <random>
 
 #include "treemaker.h"
 
@@ -32,24 +33,37 @@ static tree_f SeacrhInTree(wordTree *word_tree, std::string search_term)
     return {index_list};
 }
 
-static std::string PredictNextWord(std::string curr_word, wordTree *word_tree)
+static std::string PredictNextWord(std::string curr_word, wordTree *word_tree, double temp)
 {
     // This is gonna be complex
     // Just brace yourselves
 
-    tree_f curr_word_data = SeacrhInTree(word_tree, curr_word);
-
-    // search for the next word of every occurence of the current word in the training data
-    std::vector<tree_f> predicted_wordList;
-
-    for (int i= 0; i < curr_word_data.appearances; i++)
+    if (temp > 1)
     {
-        predicted_wordList.push_back(SeacrhInTree(word_tree, ((*word_tree)[curr_word_data.indexlist[i] + 1]).content));
+        std::cerr << "Temp value is set too high!" << std::endl;
+        exit(1);
     }
-    std::sort(predicted_wordList.begin(), predicted_wordList.end(), comp);
+    else if (temp < 0)
+    {
+        std::cerr << "Temp value is set too low!" << std::endl;
+        exit(1);
+    }
+    else
+    {
+        tree_f curr_word_data = SeacrhInTree(word_tree, curr_word);
 
-
-    return ((*word_tree)[(predicted_wordList[0].indexlist[0])]).content;
-
-    // eh it was not that complex at the end...
+        // search for the next word of every occurence of the current word in the training data
+        std::vector<tree_f> predicted_wordList;
+        
+        for (int i= 0; i < curr_word_data.appearances; i++)
+        {
+            predicted_wordList.push_back(SeacrhInTree(word_tree, ((*word_tree)[curr_word_data.indexlist[i] + 1]).content));
+        }
+        std::sort(predicted_wordList.begin(), predicted_wordList.end(), comp);
+        
+    
+        return ((*word_tree)[(predicted_wordList[0].indexlist[0])]).content;
+    
+        // eh it was not that complex at the end...
+    }
 }
